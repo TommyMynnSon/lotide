@@ -38,6 +38,7 @@ const letterPositions = (sentence) => {
   return results;
 };
 
+// Test/driver code.
 const result = letterPositions('lighthouse in the house');
 const expectedResult = {
   l: [0],
@@ -52,7 +53,6 @@ const expectedResult = {
   n: [12]
 };
 
-// Test/driver code.
 for (const letter in result) {
   assertArraysEqual(result[letter], expectedResult[letter]);
 }
