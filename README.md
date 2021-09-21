@@ -53,9 +53,3 @@ The following functions are currently implemented:
 * `eqArrays(array1, array2)`: Returns true if array1 and array2 are equal. Currently only supports arrays populated with primitive data types.
 
 * `eqObjects(object1, object2)`: Returns true if object1 and object2 are equal. Currently only supports objects with properties of primitive data types or 1-dimensional arrays.
-
-* `assertEqual(primitiveDataType1, primitiveDataType2)`: Returns true if primitiveDataType1 is strictly equal to primitiveDataType2.
-
-* `assertObjectsEqual(object1, object2)`: Returns true if object1 and object2 are equal. Currently only supports objects with properties of primitive data types or 1-dimensional arrays.
-
-* `assertArraysEqual(array1, array2)`: Returns true if array1 and array2 are equal. Currently only supports arrays populated with primitive data types.
