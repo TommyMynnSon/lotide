@@ -1,4 +1,4 @@
-const _ = require('./eqArrays');
+const eqArrays = require('./eqArrays');
 
 // Determines if the number of keys of both objects match.
 const eqSize = (object1, object2) => {
@@ -33,7 +33,7 @@ const eqKey = (object1, object2) => {
 const eqValue = (object1, object2) => {
   for (const key in object1) {
     if (Array.isArray(object1[key])) {
-      if (!_.eqArrays(object1[key], object2[key])) {
+      if (!eqArrays(object1[key], object2[key])) {
         return false;
       }
     }
