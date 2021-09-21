@@ -13,7 +13,10 @@
     "type": "git",
     "url": "git+https://github.com/TommyMynnSon/lotide.git"
   },
-  "keywords": [],
+  "keywords": [
+    "Lotide",
+    "Lighthouse Labs"
+  ],
   "author": "Tommy Son <tommy.m.son@gmail.com>",
   "license": "ISC",
   "bugs": {
