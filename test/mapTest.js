@@ -1,7 +1,12 @@
-const assertArraysEqual = require('../assertArraysEqual');
+const assert = require('chai').assert;
 const map = require('../map');
 
-const words = ['lighthouse', 'labs', 'boot', 'camp'];
-assertArraysEqual(map(words, word => word += '!'), ['lighthouse!', 'labs!', 'boot!', 'camp!']);
-assertArraysEqual(map(words, word => word === 'lighthouse'), [true, false, false, false]);
-assertArraysEqual(map(words, word => word.length), [10, 4, 4, 4]);
+describe('#map', () => {
+  it("return ['lighthouse!', 'labs!', 'boot!', 'camp!'] for map(['lighthouse', 'labs', 'boot', 'camp'], word => word += '!')", () => {
+    assert.deepEqual(map(['lighthouse', 'labs', 'boot', 'camp'], word => word += '!'), ['lighthouse!', 'labs!', 'boot!', 'camp!']);
+  });
+
+  it("return [true, false, false, false] for map(['lighthouse', 'labs', 'boot', 'camp'], word => word === 'lighthouse')", () => {
+    assert.deepEqual(map(['lighthouse', 'labs', 'boot', 'camp'], word => word === 'lighthouse'), [true, false, false, false]);
+  });
+});
