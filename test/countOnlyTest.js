@@ -1,21 +1,31 @@
-const assertEqual = require('../assertEqual');
+const assert = require('chai').assert;
 const countOnly = require('../countOnly');
 
-const firstNames = [
-  'Karl',
-  'Salima',
-  'Agouhanna',
-  'Fang',
-  'Kavith',
-  'Jason',
-  'Salima',
-  'Fang',
-  'Joe'
-];
+describe('#countOnly', () => {
+  const firstNames = [
+    'Karl',
+    'Salima',
+    'Agouhanna',
+    'Fang',
+    'Kavith',
+    'Jason',
+    'Salima',
+    'Fang',
+    'Joe'
+  ];
 
-const result1 = countOnly(firstNames, { 'Jason': true, 'Karima': true, 'Fang': true, 'Agouhanna': false });
+  it('should return true', () => {
+    const expected = {
+      Jason: 1,
+      Fang: 2,
+    };
 
-assertEqual(result1['Jason'], 1);
-assertEqual(result1['Karima'], undefined);
-assertEqual(result1['Fang'], 2);
-assertEqual(result1['Agouhanna'], undefined);
+    assert.deepEqual(countOnly(firstNames, { 'Jason': true, 'Karima': true, 'Fang': true, 'Agouhanna': false }), expected);
+  });
+
+  it('should return undefined', () => {
+    let result = countOnly(firstNames, { 'Jason': true, 'Karima': true, 'Fang': true, 'Agouhanna': false });
+
+    assert.isUndefined(result['Karima']);
+  });
+});
